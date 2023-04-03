@@ -31,12 +31,12 @@ pipeline {
             steps{
                sh 'mvn clean install'
             }
-         }
+      
          stage('SonarQube analysis'){
 
             steps{
                 script{
-                    withSonarQubeEnv(credentialsId: 'sonar-api') {
+                    withSonarQubeEnv(credentialsId: 'sonar-credit') {
                     sh 'mvn clean package sonar:sonar'
                  }
                 }
